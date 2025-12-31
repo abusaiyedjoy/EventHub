@@ -21,6 +21,7 @@ import {
 } from '../lib/utils';
 import { initializeLucia } from '../lib/lucia';
 import { authMiddleware } from '../middleware/auth';
+import { getCookie } from 'hono/cookie';
 
 const auth = new Hono<{ Bindings: Env }>();
 
@@ -136,7 +137,7 @@ auth.get('/me', authMiddleware, async (c) => {
 // Logout route
 auth.post('/logout', authMiddleware, async (c) => {
     try {
-        const sessionId = c.req.cookie('auth_session');
+        const sessionId = getCookie(c, 'auth_session');
 
         if (sessionId) {
             const lucia = initializeLucia(c.env.DB);

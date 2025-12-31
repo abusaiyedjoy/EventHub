@@ -3,13 +3,14 @@ import { createMiddleware } from 'hono/factory';
 import type { Env } from '../types/env';
 import { initializeLucia } from '../lib/lucia';
 import { formatError } from '../lib/utils';
+import { getCookie } from 'hono/cookie';
 
 export const authMiddleware = createMiddleware<{ Bindings: Env }>(
     async (c, next) => {
         const lucia = initializeLucia(c.env.DB);
 
         // Get session ID from cookie
-        const sessionId = c.req.cookie('auth_session');
+        const sessionId = getCookie(c, 'auth_session');
 
         if (!sessionId) {
             return c.json(formatError('Unauthorized - No session found', 401), 401);
