@@ -1,4 +1,4 @@
-// src/middleware/auth.ts
+
 import { createMiddleware } from 'hono/factory';
 import type { Env } from '../types/env';
 import { initializeLucia } from '../lib/lucia';

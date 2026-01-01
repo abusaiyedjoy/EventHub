@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function LoginPage() {
     return (
-        <div className="container flex min-h-[calc(100vh-8rem)] items-center justify-center py-8">
+        <div className="container mx-auto flex min-h-[calc(100vh-8rem)] items-center justify-center py-8">
             <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}

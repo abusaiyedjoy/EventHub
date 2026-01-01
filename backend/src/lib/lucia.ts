@@ -1,5 +1,4 @@
-// src/lib/lucia.ts
-// Lucia Auth setup for Cloudflare Workers
+
 
 import { Lucia } from 'lucia';
 import { D1Adapter } from '@lucia-auth/adapter-sqlite';

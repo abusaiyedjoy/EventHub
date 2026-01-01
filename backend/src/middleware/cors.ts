@@ -1,4 +1,3 @@
-// src/middleware/cors.ts
 import { createMiddleware } from 'hono/factory';
 import type { Env } from '../types/env';
 

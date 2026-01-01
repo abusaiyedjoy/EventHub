@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { useEvents } from '@/hooks/useEvents';
 import { EventList } from '@/components/events/EventList';
-import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Calendar, TrendingUp, Clock } from 'lucide-react';
 import { motion } from 'framer-motion';

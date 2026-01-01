@@ -1,4 +1,4 @@
-// src/routes/events.ts
+
 import { Hono } from 'hono';
 import { zValidator } from '@hono/zod-validator';
 import type { Env } from '../types/env';

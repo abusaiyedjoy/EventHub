@@ -37,6 +37,11 @@ app.get('/', (c) => {
   });
 });
 
+// Message route for public/index.html
+app.get('/message', (c) => {
+  return c.text('Welcome to EventHub!');
+});
+
 // API routes
 app.route('/api/auth', authRoutes);
 app.route('/api/events', eventRoutes);

@@ -1,4 +1,3 @@
-// src/routes/auth.ts
 import { Hono } from 'hono';
 import { zValidator } from '@hono/zod-validator';
 import type { Env } from '../types/env';
@@ -132,6 +131,19 @@ auth.post('/login', zValidator('json', loginSchema), async (c) => {
 auth.get('/me', authMiddleware, async (c) => {
     const user = c.get('user');
     return c.json(formatSuccess({ user }));
+});
+// Get all users (admin/debug route)
+auth.get('/users', async (c) => {
+    try {
+        const db = getDb(c.env);
+        const allUsers = await db.select().from(users).all();
+        // Sanitize users (remove password)
+        const sanitized = allUsers.map(sanitizeUser);
+        return c.json(formatSuccess({ users: sanitized }));
+    } catch (error) {
+        console.error('Fetch users error:', error);
+        return c.json(formatError('Failed to fetch users', 500), 500);
+    }
 });
 
 // Logout route

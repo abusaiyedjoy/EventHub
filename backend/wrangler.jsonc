@@ -3,6 +3,7 @@
  * https://developers.cloudflare.com/workers/wrangler/configuration/
  */
 {
+  "migrations_dir": "migrations",
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "hono-project",
   "main": "src/index.ts",

@@ -1,5 +1,4 @@
-// src/lib/r2.ts
-// R2 storage helper functions for file uploads
+
 
 import type { R2Bucket } from '@cloudflare/workers-types';
 import { generateSafeFilename, isValidImageType } from './utils';

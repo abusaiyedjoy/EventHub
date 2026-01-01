@@ -1,4 +1,3 @@
-// components/auth/LoginForm.tsx
 'use client';
 
 import { useState } from 'react';
@@ -22,7 +21,7 @@ export function LoginForm() {
   };
 
   return (
-    <Card className="w-full max-w-md">
+    <Card className="w-full md:w-[400px]">
       <CardHeader>
         <CardTitle>Welcome back</CardTitle>
         <CardDescription>
